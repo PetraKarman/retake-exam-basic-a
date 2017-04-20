@@ -2,6 +2,7 @@ import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.security.Key;
 import java.util.*;
 
 public class MostCommonWord {
@@ -22,11 +23,17 @@ public class MostCommonWord {
               if (!counter.containsKey((words[i]))) {
                 counter.put(words[i], 1);
               } else {
-                counter.put(words[i], counter.get(words) + 1);
+                counter.put(words[i], counter.get(words[i]) + 1);
               }
             }
           }
-          System.out.println(Collections.max(counter.values()));
+          int maxValue = (Collections.max(counter.values()));
+          for (String s : counter.keySet()) {
+            if (counter.get(s) == maxValue) {
+              System.out.println(s);
+              break;
+            }
+          }
         } catch (Exception e) {
           System.out.println("error");
         }
@@ -40,12 +47,12 @@ public class MostCommonWord {
 }
 
 
-    // This should be a simple word counter which give us the most common string in a file
-    // If ran from the command line without arguments it should print out the usage:
-    // java MostCommonWord [source]
-    // When no argument is provided print out
-    // No source provided
-    // When the argument provided and the source is a file
-    // count all words in the given file and print the most common
-    // ("cat", "CAT", "cat," "cat." are different words )
+// This should be a simple word counter which give us the most common string in a file
+// If ran from the command line without arguments it should print out the usage:
+// java MostCommonWord [source]
+// When no argument is provided print out
+// No source provided
+// When the argument provided and the source is a file
+// count all words in the given file and print the most common
+// ("cat", "CAT", "cat," "cat." are different words )
 

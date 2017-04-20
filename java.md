@@ -45,4 +45,4 @@ class Foxi extends Dog {
 }
 ```
 #### Your answer:
-[add your answer here]   
+[3, The first is the Object class's constructor, then the constructor of Animal Class and finally the constructor of Dog Class.]   

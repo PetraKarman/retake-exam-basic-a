@@ -6,11 +6,6 @@ import java.util.Arrays;
 import static org.junit.Assert.*;
 
 public class MinMaxDiffTest {
-  @Test
-  public void getMinMaxDiff_ListOfZeros() throws Exception {
-    ArrayList<Integer> numbers = new ArrayList<>(Arrays.asList(0, 0, 0, 0, 0));
-    assertEquals(0, MinMaxDiff.getMinMaxDiff(numbers));
-  }
 
   @Test
   public void getMinMaxDiff_ListOfSameIntegers() throws Exception {
